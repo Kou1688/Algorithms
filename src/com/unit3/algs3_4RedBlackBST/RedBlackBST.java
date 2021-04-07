@@ -36,6 +36,10 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return x.color == RED;
     }
 
+    public boolean isEmpty() {
+        return root == null;
+    }
+
     public int size() {
         //返回这棵子树的大小
         return size(root);
@@ -47,6 +51,43 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         } else {
             return x.N;
         }
+    }
+
+    /**
+     * 查找
+     *
+     * @param key 要查找的值
+     * @return 返回查找键对应的val值
+     */
+    public Value get(Key key) {
+        if (key == null) {
+            throw new IllegalArgumentException("argument to get() is null");
+        }
+        return get(root, key);
+    }
+
+    private Value get(Node x, Key key) {
+        if (x == null) {
+            return null;
+        }
+        int temp = key.compareTo(x.key);
+        if (temp < 0) {
+            return get(x.left, key);
+        } else if (temp > 0) {
+            return get(x.right, key);
+        } else {
+            return x.val;
+        }
+    }
+
+    /**
+     * 判断此Key值是否在树中
+     *
+     * @param key 需要查找的Key值
+     * @return true存在false不存在
+     */
+    public boolean contains(Key key) {
+        return get(key) != null;
     }
 
     //左旋转
@@ -73,8 +114,12 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return x;
     }
 
-    //转换一个结点的两个红色子结点的颜色
-    //通过转换颜色来分解4-结点
+    /**
+     * 转换一个结点的两个红色子结点的颜色
+     * 通过转换颜色来分解4-结点
+     *
+     * @param h 需要转换颜色的结点
+     */
     private void flipColors(Node h) {
         h.color = RED;
         h.left.color = BLACK;
