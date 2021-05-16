@@ -1,4 +1,7 @@
-package com.unit4.Graph;
+package com.unit4.Graph.DFS;
+
+import com.unit4.Graph.DFS.DepthFirstPath;
+import com.unit4.Graph.Graph;
 
 import java.util.Scanner;
 

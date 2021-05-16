@@ -1,6 +1,7 @@
-package com.unit4.Graph;
+package com.unit4.Graph.DFS;
 
 import com.unit1.algs1_2.Stack;
+import com.unit4.Graph.Graph;
 
 /**
  * @Author Kou
@@ -11,6 +12,8 @@ public class DepthFirstPath {
     private boolean[] marked;   //此顶点是否已经调用了dfs();
     private int[] edgeTo;   //每个顶点到起点的路径。从起点到一个顶点已知的最后一条路径。
     private final int s;    //起点
+    private int[] id;   //v所在连通分量的标识符
+    private int count;  //连通分量数
 
     public DepthFirstPath(Graph graph, int s) {
         this.marked = new boolean[graph.VERTEX_NUM()];
