@@ -4,6 +4,7 @@ import com.unit4.Graph.Bag;
 import edu.princeton.cs.algs4.In;
 
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 /**
  * @author Kou
@@ -47,9 +48,19 @@ public class Digraph {
                 int w = in.readInt();
                 addEdge(v, w);
             }
-        }
-        catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             throw new IllegalArgumentException("invalid input format in Digraph constructor", e);
+        }
+    }
+
+    public Digraph(Scanner in) {
+        this.V = in.nextInt();
+        int E = in.nextInt();
+
+        for (int i = 0; i < E; i++) {
+            int v = in.nextInt();
+            int w = in.nextInt();
+            addEdge(v, w);
         }
     }
 
