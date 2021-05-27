@@ -1,4 +1,4 @@
-package com.unit4.Digraph;
+package com.unit4.digraph;
 
 import com.unit1.algs1_2.Stack;
 

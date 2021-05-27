@@ -1,4 +1,4 @@
-package com.unit4.Digraph;
+package com.unit4.digraph;
 
 import com.unit4.Graph.Bag;
 import edu.princeton.cs.algs4.In;
@@ -7,6 +7,8 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
+ * 有向图
+ *
  * @author Kou
  * @date: 2021/5/24 13:16
  * @Description: 有向图
@@ -32,17 +34,23 @@ public class Digraph {
     }
 
     public Digraph(In in) {
-        if (in == null) throw new IllegalArgumentException("argument is null");
+        if (in == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
         try {
             this.V = in.readInt();
-            if (V < 0) throw new IllegalArgumentException("number of vertices in a Digraph must be non-negative");
+            if (V < 0) {
+                throw new IllegalArgumentException("number of vertices in a Digraph must be non-negative");
+            }
             indegree = new int[V];
             adj = (Bag<Integer>[]) new Bag[V];
             for (int v = 0; v < V; v++) {
                 adj[v] = new Bag<Integer>();
             }
             int E = in.readInt();
-            if (E < 0) throw new IllegalArgumentException("number of edges in a Digraph must be non-negative");
+            if (E < 0) {
+                throw new IllegalArgumentException("number of edges in a Digraph must be non-negative");
+            }
             for (int i = 0; i < E; i++) {
                 int v = in.readInt();
                 int w = in.readInt();
@@ -54,7 +62,7 @@ public class Digraph {
     }
 
     public Digraph(Scanner in) {
-        this.V = in.nextInt();
+        this(in.nextInt());
         int E = in.nextInt();
 
         for (int i = 0; i < E; i++) {

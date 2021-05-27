@@ -1,4 +1,4 @@
-package com.unit4.分而治之;
+package com.unit1.partition;
 
 /**
  * @author Kou

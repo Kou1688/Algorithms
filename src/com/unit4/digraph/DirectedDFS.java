@@ -1,6 +1,4 @@
-package com.unit4.Digraph;
-
-import edu.princeton.cs.algs4.In;
+package com.unit4.digraph;
 
 /**
  * @author Kou

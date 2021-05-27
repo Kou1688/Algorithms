@@ -12,9 +12,18 @@ import java.util.Queue;
  * @Description: 使用广度优先搜索查找途中的路径
  */
 public class BreadthFirstPaths {
-    private boolean marked[];   //到达该顶点的路径是否已知
-    private int[] edgeTo; //到达该顶点的路径上的最后一个顶点
-    private final int s;    //起点
+    /**
+     * 到达该顶点的路径是否已知
+     */
+    private boolean[] marked;
+    /**
+     * 到达该顶点的路径上的最后一个顶点
+     */
+    private int[] edgeTo;
+    /**
+     * 起点
+     */
+    private final int s;
 
     public BreadthFirstPaths(Graph graph, int s) {
         this.s = s;

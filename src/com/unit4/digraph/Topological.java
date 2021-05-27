@@ -1,4 +1,4 @@
-package com.unit4.Digraph;
+package com.unit4.digraph;
 
 /**
  * @author Kou
@@ -6,12 +6,16 @@ package com.unit4.Digraph;
  * @Description: 拓扑排序
  */
 public class Topological {
-    private Iterable<Integer> order;    //顶点的拓扑排序
+    /**
+     * 顶点的拓扑排序
+     */
+    private Iterable<Integer> order;
 
-    public Topological(Digraph G) {
-        DirectedCycle cycleFinder = new DirectedCycle(G); //检测该图是否有环
+    public Topological(Digraph g) {
+        //检测该图是否有环
+        DirectedCycle cycleFinder = new DirectedCycle(g);
         if (!cycleFinder.hasCycle()) {
-            DepthFirstOrder dfs = new DepthFirstOrder(G);
+            DepthFirstOrder dfs = new DepthFirstOrder(g);
 
             order = dfs.reversePost();
         }
@@ -26,7 +30,7 @@ public class Topological {
      *
      * @return G是有向无环图吗?
      */
-    public boolean isDAG() {
+    public boolean isDag() {
         return order != null;
     }
 }

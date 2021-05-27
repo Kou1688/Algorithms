@@ -1,4 +1,4 @@
-package com.unit4.Digraph;
+package com.unit4.digraph;
 
 import com.unit1.algs1_2.Stack;
 
@@ -30,7 +30,8 @@ public class DepthFirstOrder {
     }
 
     private void dfs(Digraph G, int v) {
-        pre.offer(v);   //前序排列(dfs的调用顺序)
+        //前序排列(dfs的调用顺序)
+        pre.offer(v);
 
         //深度优先搜索
         marked[v] = true;

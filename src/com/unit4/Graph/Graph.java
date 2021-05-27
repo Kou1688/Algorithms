@@ -18,8 +18,10 @@ public class Graph {
     public Graph(int VERTEX_NUM) {
         this.VERTEX_NUM = VERTEX_NUM;
         this.edgeNum = 0;
-        adjacencyList = new Bag[VERTEX_NUM];   //创建邻接表
-        for (int v = 0; v < VERTEX_NUM; v++) { //将所有链表初始化为空
+        //创建邻接表
+        adjacencyList = new Bag[VERTEX_NUM];
+        //将所有链表初始化为空
+        for (int v = 0; v < VERTEX_NUM; v++) {
             adjacencyList[v] = new Bag<>();
         }
     }
@@ -30,11 +32,13 @@ public class Graph {
      * @param in 输入
      */
     public Graph(Scanner in) {
-        this(in.nextInt()); //读取VERTEX并将图初始化
-        int edgeNum = in.nextInt(); //读取edgeNum
+        //读取VERTEX并将图初始化
+        this(in.nextInt());
+        //读取edgeNum
+        int edgeNum = in.nextInt();
         for (int i = 0; i < edgeNum; i++) {
-            //添加一条边
-            int v = in.nextInt();    //读取两个顶点
+            //添加一条边,读取两个顶点
+            int v = in.nextInt();
             int w = in.nextInt();
             addEdge(v, w);
         }
