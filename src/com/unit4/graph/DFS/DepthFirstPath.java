@@ -1,7 +1,7 @@
-package com.unit4.Graph.DFS;
+package com.unit4.graph.DFS;
 
 import com.unit1.algs1_2.Stack;
-import com.unit4.Graph.Graph;
+import com.unit4.graph.Graph;
 
 /**
  * @Author Kou

@@ -1,6 +1,6 @@
-package com.unit4.Graph.SymbolGraph;
+package com.unit4.graph.SymbolGraph;
 
-import com.unit4.Graph.Graph;
+import com.unit4.graph.Graph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.ST;
 

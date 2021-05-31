@@ -1,7 +1,7 @@
-package com.unit4.Graph.DFS.CC;
+package com.unit4.graph.DFS.CC;
 
-import com.unit4.Graph.Bag;
-import com.unit4.Graph.Graph;
+import com.unit4.graph.Bag;
+import com.unit4.graph.Graph;
 
 import java.util.Scanner;
 

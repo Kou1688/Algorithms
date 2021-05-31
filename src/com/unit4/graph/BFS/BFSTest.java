@@ -1,6 +1,6 @@
-package com.unit4.Graph.BFS;
+package com.unit4.graph.BFS;
 
-import com.unit4.Graph.Graph;
+import com.unit4.graph.Graph;
 
 import java.util.Scanner;
 

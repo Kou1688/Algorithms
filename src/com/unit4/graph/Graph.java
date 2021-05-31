@@ -1,25 +1,36 @@
-package com.unit4.Graph;
+package com.unit4.graph;
 
 import java.util.Scanner;
 
 /**
  * 邻接表无向图
+ * @author Kou
  */
 public class Graph {
-    private final int VERTEX_NUM;    //顶点数目
-    private int edgeNum;   //边的数目
-    private Bag<Integer>[] adjacencyList;    //邻接表
+    /**
+     * 边的数目
+     */
+    private final int VERTEX_NUM;
+    /**
+     * 边的数目
+     */
+    private int edgeNum;
+    /**
+     * 邻接表
+     */
+    private Bag<Integer>[] adjacencyList;
 
     /**
      * 创建一个含有VERTEX_NUM个顶点但不含有边的图
      *
      * @param VERTEX_NUM vertex number
      */
+    @SuppressWarnings("unchecked")
     public Graph(int VERTEX_NUM) {
         this.VERTEX_NUM = VERTEX_NUM;
         this.edgeNum = 0;
         //创建邻接表
-        adjacencyList = new Bag[VERTEX_NUM];
+        adjacencyList =(Bag<Integer>[]) new Bag[VERTEX_NUM];
         //将所有链表初始化为空
         for (int v = 0; v < VERTEX_NUM; v++) {
             adjacencyList[v] = new Bag<>();
@@ -59,9 +70,12 @@ public class Graph {
      * @param w another vertex
      */
     public void addEdge(int v, int w) {
-        adjacencyList[v].add(w);    //将w添加进v的链表中
-        adjacencyList[w].add(v);    //将v添加进w的链表中
-        edgeNum++;  //边的总数+1
+        //将w添加进v的链表中
+        adjacencyList[v].add(w);
+        //将v添加进w的链表中
+        adjacencyList[w].add(v);
+        //边的总数+1
+        edgeNum++;
     }
 
     /**
@@ -96,14 +110,14 @@ public class Graph {
      */
     @Override
     public String toString() {
-        String s = VERTEX_NUM + "vertices," + edgeNum + " edges\n";
+        StringBuilder s = new StringBuilder(VERTEX_NUM + "vertices," + edgeNum + " edges\n");
         for (int v = 0; v < VERTEX_NUM; v++) {
-            s = s + v + ": ";
+            s.append(v).append(": ");
             for (int w : this.adj(v)) {
-                s = s + w + " ";
+                s.append(w).append(" ");
             }
-            s = s + "\n";
+            s.append("\n");
         }
-        return s;
+        return s.toString();
     }
 }

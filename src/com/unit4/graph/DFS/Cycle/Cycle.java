@@ -1,6 +1,6 @@
-package com.unit4.Graph.DFS.Cycle;
+package com.unit4.graph.DFS.Cycle;
 
-import com.unit4.Graph.Graph;
+import com.unit4.graph.Graph;
 
 /**
  * @author Kou

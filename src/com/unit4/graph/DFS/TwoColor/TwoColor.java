@@ -1,6 +1,6 @@
-package com.unit4.Graph.DFS.TwoColor;
+package com.unit4.graph.DFS.TwoColor;
 
-import com.unit4.Graph.Graph;
+import com.unit4.graph.Graph;
 
 /**
  * @author Kou

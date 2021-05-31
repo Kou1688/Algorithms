@@ -1,6 +1,6 @@
 package com.unit4.digraph;
 
-import com.unit4.Graph.Bag;
+import com.unit4.graph.Bag;
 import edu.princeton.cs.algs4.In;
 
 import java.util.NoSuchElementException;
