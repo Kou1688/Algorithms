@@ -14,9 +14,18 @@ import java.util.Scanner;
  * @Description: 有向图
  */
 public class Digraph {
-    private final int V;    //顶点数
-    private int E;  //边数
-    private Bag<Integer>[] adj; //邻接表
+    /**
+     * 顶点数
+     */
+    private final int V;
+    /**
+     * 边数
+     */
+    private int E;
+    /**
+     * 邻接表
+     */
+    private Bag<Integer>[] adj;
     private int[] indegree;
 
     /**
@@ -24,6 +33,7 @@ public class Digraph {
      *
      * @param V vertex
      */
+    @SuppressWarnings("unchecked")
     public Digraph(int V) {
         this.V = V;
         this.E = 0;

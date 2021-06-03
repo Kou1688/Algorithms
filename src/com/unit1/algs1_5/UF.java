@@ -6,8 +6,14 @@ import java.util.Scanner;
  * 动态连通问题
  */
 public class UF {
-    private int[] id; //分量id(以触点为索引)
-    private int count; //分量数量
+    /**
+     * 分量id(以触点为索引)
+     */
+    private int[] id;
+    /**
+     * 分量数量
+     */
+    private int count;
 
     public UF(int N) {
         //以整数标识初始化N个触点
@@ -36,54 +42,56 @@ public class UF {
      * @return id[p]
      */
     /**
-    public int find(int p) {
-        //p所在的分量的标识符
-        return id[p];
-    }
+     public int find(int p) {
+     //p所在的分量的标识符
+     return id[p];
+     }
 
-    public void union(int p, int q) {
-        //在p和q之间添加一个连接
-        int pID = find(p);
-        int qID = find(q);
-        if (pID == qID) {
-            return;
-        }
-        for (int i = 0; i < id.length; i++) {  //将p的分量重命名为q的名称
-            if (id[i] == pID) {
-                id[i] = qID;
-            }
-        }
-        count--;
-    }
+     public void union(int p, int q) {
+     //在p和q之间添加一个连接
+     int pID = find(p);
+     int qID = find(q);
+     if (pID == qID) {
+     return;
+     }
+     for (int i = 0; i < id.length; i++) {  //将p的分量重命名为q的名称
+     if (id[i] == pID) {
+     id[i] = qID;
+     }
+     }
+     count--;
+     }
      **/
 
     /**
      * quick-union算法
      * 森林的应用
+     *
      * @param p
      * @return
      */
-    public int find(int p){
+    public int find(int p) {
         //找到根节点
-        while (p!=id[p]){
-            p=id[p];
+        while (p != id[p]) {
+            p = id[p];
         }
         return p;
     }
 
-    public void union(int p,int q){
-        int pRoot=find(p);
-        int qRoot=find(q);
-        if (pRoot==qRoot){
+    public void union(int p, int q) {
+        int pRoot = find(p);
+        int qRoot = find(q);
+        if (pRoot == qRoot) {
             return;
         }
-        id[pRoot]=qRoot;
+        id[pRoot] = qRoot;
         count--;
     }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int N = in.nextInt(); //触点数量
+        //触点数量
+        int N = in.nextInt();
         UF uf = new UF(N);
         while (in.hasNext()) {
             int p = in.nextInt();

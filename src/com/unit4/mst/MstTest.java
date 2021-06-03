@@ -12,8 +12,7 @@ public class MstTest {
         Scanner in = new Scanner(System.in);
         EdgeWeightedGraph graph = new EdgeWeightedGraph(in);
 
-        // LazyPrimMinimumSpanningTree minimumSpanningTree = new LazyPrimMinimumSpanningTree(graph);
-        PrimMinimumSpanningTree minimumSpanningTree = new PrimMinimumSpanningTree(graph);
+        KruskalMinSpanningTree minimumSpanningTree = new KruskalMinSpanningTree(graph);
         for (Edge edge : minimumSpanningTree.edges()) {
             System.out.println(edge);
         }
