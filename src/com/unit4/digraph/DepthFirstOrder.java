@@ -12,9 +12,18 @@ import java.util.Queue;
  */
 public class DepthFirstOrder {
     private boolean[] marked;
-    private Queue<Integer> pre; //所有顶点的前序排列(dfs的调用顺序)
-    private Queue<Integer> post;    //所有顶点的后序排列(顶点遍历完成的顺序,在递归调用之后将顶点加入队列)
-    private Stack<Integer> reversePost; //所有顶点的逆后序排列(反向顶点遍历的顺序)(拓扑排序)
+    /**
+     * 所有顶点的前序排列(dfs的调用顺序)
+     */
+    private Queue<Integer> pre;
+    /**
+     * 所有顶点的后序排列(顶点遍历完成的顺序,在递归调用之后将顶点加入队列)
+     */
+    private Queue<Integer> post;
+    /**
+     *     所有顶点的逆后序排列(反向顶点遍历的顺序)(拓扑排序)
+     */
+    private Stack<Integer> reversePost;
 
     public DepthFirstOrder(Digraph G) {
         pre = new LinkedList<>();

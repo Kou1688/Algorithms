@@ -11,10 +11,10 @@ public class ShortestPathTest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         EdgeWeightedDigraph digraph = new EdgeWeightedDigraph(in);
-        DijkstraShortestPath path = new DijkstraShortestPath(digraph, 0);
+        DijkstraShortestPath path = new DijkstraShortestPath(digraph, 5);
 
         for (int t = 0; t < digraph.getVertexNum(); t++) {
-            System.out.print(0 + "to" + t);
+            System.out.print(5 + "to" + t);
             System.out.printf(" (%4.2f): ", path.distTo(t));
 
             if (path.hasPathTo(t)) {
