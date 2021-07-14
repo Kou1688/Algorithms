@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * 邻接表无向图
+ *
  * @author Kou
  */
 public class Graph {
@@ -30,7 +31,7 @@ public class Graph {
         this.VERTEX_NUM = VERTEX_NUM;
         this.edgeNum = 0;
         //创建邻接表
-        adjacencyList =(Bag<Integer>[]) new Bag[VERTEX_NUM];
+        adjacencyList = (Bag<Integer>[]) new Bag[VERTEX_NUM];
         //将所有链表初始化为空
         for (int v = 0; v < VERTEX_NUM; v++) {
             adjacencyList[v] = new Bag<>();

@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 /**
  * 下压堆栈 (链表实现)
- * date 2021/3/20
+ * @date 2021/3/20
  *
  * @param <Item>
  * @author Kou

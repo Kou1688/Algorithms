@@ -4,17 +4,32 @@ import com.unit1.algs1_2.Stack;
 import com.unit4.graph.Graph;
 
 /**
+ * 深度优先搜索
+ *
  * @Author Kou
  * @Date: 2021/4/26 15:55
  * @Description: DFS
  */
 public class DepthFirstPath {
-    private boolean[] marked;   //此顶点是否已经调用了dfs();
-    private int[] edgeTo;   //每个顶点到起点的路径。从起点到一个顶点已知的最后一条路径。
-    private final int s;    //起点
-    private int[] id;   //v所在连通分量的标识符
-    private int count;  //连通分量数
+    /**
+     * 此顶点是否已经调用了dfs()
+     */
+    private final boolean[] marked;
+    /**
+     * 每个顶点到起点的路径。从起点到一个顶点已知的最后一条路径。
+     */
+    private final int[] edgeTo;
+    /**
+     * 起点
+     */
+    private final int s;
 
+    /**
+     * 深度优先搜索查找图中的路径构造方法
+     *
+     * @param graph 无向图
+     * @param s 起点
+     */
     public DepthFirstPath(Graph graph, int s) {
         this.marked = new boolean[graph.VERTEX_NUM()];
         this.edgeTo = new int[graph.VERTEX_NUM()];
@@ -29,10 +44,13 @@ public class DepthFirstPath {
      * @param v     起点
      */
     private void dfs(Graph graph, int v) {
-        marked[v] = true;   //调用当前结点
+        //标记当前结点被调用
+        marked[v] = true;
         for (int w : graph.adj(v)) {
-            if (!marked[w]) {   //如果当前结点还没有被调用
-                edgeTo[w] = v;  //记录最后一条已知的路径
+            //如果当前结点还没有被调用
+            if (!marked[w]) {
+                //记录最后一条已知的路径
+                edgeTo[w] = v;
                 dfs(graph, w);
             }
         }
